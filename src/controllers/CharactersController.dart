@@ -1,0 +1,3 @@
+class CharactersController {
+  Response index() {}
+}

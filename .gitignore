@@ -1,0 +1,8 @@
+# IDE SPECIFIC
+.idea/
+
+# PUB
+.pub/
+
+# DART
+.packages
