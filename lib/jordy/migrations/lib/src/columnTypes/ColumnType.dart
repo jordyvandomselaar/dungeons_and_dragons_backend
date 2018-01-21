@@ -9,10 +9,7 @@ abstract class ColumnType {
 
   bool get isNullable => this._nullable;
 
-  // Every child class should implement this.
-  String get sqlName;
-
-  ColumnType(String this._name, [int this._length = 255]);
+  ColumnType(this._name, [this._length = 255]);
 
   ColumnType nullable() {
     this._nullable = true;

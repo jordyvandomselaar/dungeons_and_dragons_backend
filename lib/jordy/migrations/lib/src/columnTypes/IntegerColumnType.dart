@@ -3,8 +3,7 @@ import "ColumnType.dart";
 class IntegerColumnType extends ColumnType {
   bool _unsigned = false;
 
-  @override
-  String get sqlName => "INTEGER";
+  bool get isUnsigned => _unsigned;
 
   IntegerColumnType(String name, [int length = 255]) : super(name, length);
 

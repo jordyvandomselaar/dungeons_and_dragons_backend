@@ -1,12 +1,27 @@
-import "columnTypes/ColumnType.dart";
+import "columnTypes/IntegerColumnType.dart";
 import "columnTypes/VarcharColumnType.dart";
 
 class Table {
-  List<ColumnType> _columns = new List<ColumnType>();
+  List<VarcharColumnType> varcharColumns = new List<VarcharColumnType>();
+  List<IntegerColumnType> integerColumns = new List<IntegerColumnType>();
 
-  void string(String name, [int length = 255]) {
-    this._columns.add(new VarcharColumnType(name, length));
+  void autoIncrements([String name = "id"]) {
+    this.integer(name).unsigned();
   }
 
-  void autoIncrements([String name = "id"]) {}
+  VarcharColumnType string(String name, [int length = 255]) {
+    VarcharColumnType varcharColumnType = new VarcharColumnType(name, length);
+
+    this.varcharColumns.add(varcharColumnType);
+
+    return varcharColumnType;
+  }
+
+  IntegerColumnType integer(String name, [int length = 255]) {
+    IntegerColumnType integerColumnType = new IntegerColumnType(name, length);
+
+    this.integerColumns.add(integerColumnType);
+
+    return integerColumnType;
+  }
 }

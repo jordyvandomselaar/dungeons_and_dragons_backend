@@ -7,8 +7,9 @@ void main(List<String> arguments) {
 }
 
 void migrate() {
-  Schema.create("").then((Table table) {
-    table.string("foo");
-    print("foo");
+  Schema.create("users", (Table table) {
+    table.autoIncrements();
+    table.string("foo").nullable();
+    table.string("derp");
   });
 }
